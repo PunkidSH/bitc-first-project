@@ -77,7 +77,7 @@ public class BoardController {
     public ModelAndView selectBoardDetail(
             HttpSession session,
             @PathVariable("boardId") Long boardId) throws Exception {
-        ModelAndView mv = new ModelAndView("board/boardDetail");
+        ModelAndView mv = new ModelAndView("/board/boardDetail");
         BoardEntity board = boardService.selectBoardDetail(boardId);
         board.setVisitCnt(board.getVisitCnt() + 1);
         boardService.updateBoard(board);
@@ -122,7 +122,7 @@ public class BoardController {
     //    게시글 등록(view)
     @GetMapping("/write")
     public ModelAndView insertBoard(HttpSession session) throws Exception {
-        ModelAndView mv = new ModelAndView("board/boardWrite");
+        ModelAndView mv = new ModelAndView("/board/boardWrite");
 
         UserEntity user = userService.findByUserId((String)session.getAttribute("userId"));
 
@@ -136,24 +136,24 @@ public class BoardController {
 //    게시글 등록 처리
     @PostMapping("/write")
     public String insertBoard(
-            @RequestParam String userId,
-            @RequestParam String title,
-            @RequestParam String category,
-            @RequestParam String content,
-            @RequestParam String option) throws Exception {
+        @RequestParam String userId,
+        @RequestParam String title,
+        @RequestParam String category,
+        @RequestParam String content,
+        @RequestParam(required = false) String option) throws Exception {
         BoardEntity board = new BoardEntity();
 
         UserEntity user = userService.findByUserId(userId);
         board.setTitle(title);
         board.setCategory(category);
         board.setContent(content);
-        board.setWarning(option);
+        board.setWarning(option == null || option.isEmpty() ? "" : option);
         board.setUser(user);
 
         boardService.insertBoard(board);
 
         return "redirect:/board/";
-    }
+}
 
 
 

@@ -106,7 +106,7 @@ public class UserController {
   @RequestMapping("/logout")
   public ModelAndView logout(HttpServletRequest req) throws Exception {
     ModelAndView mv = new ModelAndView();
-    mv.setViewName("redirect:/login");
+    mv.setViewName("redirect:login");
     HttpSession session = req.getSession();
 
     session.removeAttribute("userId");
@@ -200,7 +200,7 @@ public class UserController {
       }
     }
     catch (NullPointerException e) {
-      mv.setViewName("redirect:/findPassword?error=notFoundUser");
+      mv.setViewName("redirect:/?error=notFoundUser");
     }
     catch (Exception e) {
       mv.setViewName("redirect:/findPassword?error=error");

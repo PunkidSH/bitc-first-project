@@ -21,20 +21,18 @@ public class WebMVCConfig implements WebMvcConfigurer {
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
     registry.addInterceptor(new LoginCheck()).addPathPatterns("/loginSuccess"); // 로그인 필요 페이지 추가 가능
+
   }
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/img/**")
-//                .addResourceLocations("file:///C:/fullstack405/img/");
-
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("file://C:/firstPrjImg/");
 
     //mac, linux 는 file://
-    String path1 = "file:///" + fileUtil.getSaveFilePath();
+//    String path1 = "file://" + fileUtil.getSaveFilePath();
 
-    registry.addResourceHandler("/imgs/**")
-            .addResourceLocations(path1);
-
-
+//    registry.addResourceHandler("/imgs/**")
+//            .addResourceLocations(path1);
   }
 }

@@ -40,7 +40,7 @@ public class CommentController {
 
         boardCommentService.boardCommentWrite(comment);
 
-        return "redirect:/board/" + boardId;
+        return "redirect:board/" + boardId;
     }
 
     //    게시판 댓글 수정

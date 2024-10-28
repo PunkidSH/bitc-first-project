@@ -35,7 +35,7 @@ public class BoardEntity extends BaseEntity{
     @Column(nullable = false)
     private String category; // 카테고리
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String warning; // 주의
 
 
