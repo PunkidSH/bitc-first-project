@@ -25,16 +25,18 @@
 # ERD & USE-CASE
 <details>
 <summary>ERD</summary>
-<img src="" alt="ERD" />
+<img src="ERD.png" alt="ERD" />
 </details>
 <details>
 <summary>USE-CASE</summary>
-<img src="" alt="USE-CASE" />
+<img src="UseCase.png" alt="USE-CASE" />
 </details>
 
 # 주요기능
-1. 
->
-
-2.
-> 
+> 회원가입 및 로그인<br>
+> 영화 리스트 확인 및 영화 정보 확인<br>
+> 영화 즐겨찾기 추가, 평점 및 리뷰 댓글 작성<br>
+> 자유게시판 글 목록 확인, 상세보기, 좋아요/싫어요, 댓글 작성<br>
+> 마이페이지, 다른 유저 프로필 확인<br>
+> 마이페이지에서 프로필 이미지 설정, 내 게시물, 댓글, 좋아요, 북마크한 영화 확인<br>
+> 마이페이지에서 비밀번호 변경, 회원탈퇴<br>
