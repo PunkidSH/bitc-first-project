@@ -33,6 +33,10 @@
 <summary>USE-CASE</summary>
 <img src="UseCase.png" alt="USE-CASE" />
 </details>
+<details>
+<summary>시연 영상</summary>
+<a href="https://youtu.be/gtxqIVDP1Pk">영상 링크(YouTube)</a>
+</details>
 
 # 주요기능
 > 회원가입 및 로그인<br>
